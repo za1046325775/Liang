@@ -1,0 +1,2298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendRegisterSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendRegisterSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendRegisterSMSResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsOk" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Str1" />
+          <s:element minOccurs="0" maxOccurs="1" name="Str2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Str3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Int1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Int2" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Double1" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Double2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Double3" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendChangePwdSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendChangePwdSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendChangePwdSMSResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterCheckResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vfCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyPasswordResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyPayPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vfCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyPayPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyPayPasswordResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="shopId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="billStr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cashSum" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckResultResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="billStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="visitStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateOrderResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatchDiscountPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="billStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="visitStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatchDiscountPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MatchDiscountPackageResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExitUser">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExitUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExitUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListShopPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="eatMode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MdWeiXinGiftInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GroupId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GiftId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GiftName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GiftMemo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAllShop" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShopId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BaseModel" />
+      <s:complexType name="MdShop">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseModel">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ShopId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="GroupId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShopName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AdrItude" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShopCity" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LogImg" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OutMinute" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RunStar" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="RunEnd" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="RunTimeText" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShopIntrod" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WeiXinServiceNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfAliPayAppId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfAliPayPrivateKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfAliPayPublicKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfWeiXinAppId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfWeiXinMchId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfWeiXinKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfWeiXinAppSecret" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfAliPayPartner" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SelfAliPayMD5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListAgio" type="tns:ArrayOfMdWeiXinGiftInfo" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastOnLineTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="TogoFeeAmt" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="TogoMinAmt" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShopWeiXinKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShopWeiXinMchId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDeliverPolygon" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsGiveTicket" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsAccountPisaGift" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="MeiTuanPayMchId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfMdWeiXinGiftInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MdWeiXinGiftInfo" nillable="true" type="tns:MdWeiXinGiftInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMdShop">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MdShop" nillable="true" type="tns:MdShop" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListShopPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListShopPageResult" type="tns:ArrayOfMdShop" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindListShopPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eatMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindListShopPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindListShopPageResult" type="tns:ArrayOfMdShop" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListShop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="eatMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListShopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListShopResult" type="tns:ArrayOfMdShop" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDeliverPolygon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="shopId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="memberId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="adrIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDeliverPolygonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDeliverPolygonResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommentOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eatMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="foodStar" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sentStar" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceStar" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="rank" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommentOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommentOrderResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindWxMediaId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindWxMediaIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindWxMediaIdResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReleaseWxMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="menuJson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReleaseWxMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReleaseWxMenuResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserLoginResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eatMode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderMessageResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMemberDatum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="birthDay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sex" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMemberDatumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMemberDatumResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildLucky">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="drawNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="joinType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="drawShowType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildLuckyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuildLuckyResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrgeOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrgeOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UrgeOrderResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickSeckill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="drawNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="periodNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticketNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickSeckillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuickSeckillResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSeckillStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="groupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="drawNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSeckillStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSeckillStatusResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuyPreorderTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="drawNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="shopId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuyPreorderTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuyPreorderTicketResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Result" nillable="true" type="tns:Result" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfMdShop" nillable="true" type="tns:ArrayOfMdShop" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendRegisterSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendRegisterSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendRegisterSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendRegisterSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendChangePwdSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendChangePwdSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendChangePwdSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendChangePwdSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterCheck" />
+  </wsdl:message>
+  <wsdl:message name="RegisterCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyPassword" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPayPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyPayPassword" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPayPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyPayPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckResultSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckResultSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="MatchDiscountPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:MatchDiscountPackage" />
+  </wsdl:message>
+  <wsdl:message name="MatchDiscountPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:MatchDiscountPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExitUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ExitUser" />
+  </wsdl:message>
+  <wsdl:message name="ExitUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ExitUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListShopPage" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListShopPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindListShopPageSoapIn">
+    <wsdl:part name="parameters" element="tns:FindListShopPage" />
+  </wsdl:message>
+  <wsdl:message name="FindListShopPageSoapOut">
+    <wsdl:part name="parameters" element="tns:FindListShopPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListShop" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDeliverPolygonSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDeliverPolygon" />
+  </wsdl:message>
+  <wsdl:message name="CheckDeliverPolygonSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDeliverPolygonResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommentOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CommentOrder" />
+  </wsdl:message>
+  <wsdl:message name="CommentOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CommentOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindWxMediaIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FindWxMediaId" />
+  </wsdl:message>
+  <wsdl:message name="FindWxMediaIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FindWxMediaIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWxMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:ReleaseWxMenu" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWxMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:ReleaseWxMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberDatumSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMemberDatum" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberDatumSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMemberDatumResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuildLuckySoapIn">
+    <wsdl:part name="parameters" element="tns:BuildLucky" />
+  </wsdl:message>
+  <wsdl:message name="BuildLuckySoapOut">
+    <wsdl:part name="parameters" element="tns:BuildLuckyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UrgeOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:UrgeOrder" />
+  </wsdl:message>
+  <wsdl:message name="UrgeOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:UrgeOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickSeckillSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickSeckill" />
+  </wsdl:message>
+  <wsdl:message name="QuickSeckillSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickSeckillResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSeckillStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSeckillStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetSeckillStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSeckillStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuyPreorderTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:BuyPreorderTicket" />
+  </wsdl:message>
+  <wsdl:message name="BuyPreorderTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:BuyPreorderTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendRegisterSMSHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendRegisterSMSHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="SendChangePwdSMSHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendChangePwdSMSHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="RegisterCheckHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="ipCode" type="s:string" />
+    <wsdl:part name="passWord" type="s:string" />
+    <wsdl:part name="memberName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterCheckHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="vfCode" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPayPasswordHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="vfCode" type="s:string" />
+    <wsdl:part name="payPwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPayPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="CheckResultHttpGetIn">
+    <wsdl:part name="shopId" type="s:string" />
+    <wsdl:part name="billStr" type="s:string" />
+    <wsdl:part name="cashSum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckResultHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderHttpGetIn">
+    <wsdl:part name="billStr" type="s:string" />
+    <wsdl:part name="visitStr" type="s:string" />
+    <wsdl:part name="payName" type="s:string" />
+    <wsdl:part name="remark" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="MatchDiscountPackageHttpGetIn">
+    <wsdl:part name="billStr" type="s:string" />
+    <wsdl:part name="visitStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MatchDiscountPackageHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ExitUserHttpGetIn" />
+  <wsdl:message name="ExitUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopPageHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="pageIndex" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopPageHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMdShop" />
+  </wsdl:message>
+  <wsdl:message name="FindListShopPageHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="pageIndex" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="shopName" type="s:string" />
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindListShopPageHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMdShop" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="shopIds" type="s1:StringArray" />
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMdShop" />
+  </wsdl:message>
+  <wsdl:message name="CheckDeliverPolygonHttpGetIn">
+    <wsdl:part name="shopId" type="s:string" />
+    <wsdl:part name="memberId" type="s:string" />
+    <wsdl:part name="adrIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckDeliverPolygonHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="CommentOrderHttpGetIn">
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="orderNo" type="s:string" />
+    <wsdl:part name="foodStar" type="s:string" />
+    <wsdl:part name="sentStar" type="s:string" />
+    <wsdl:part name="serviceStar" type="s:string" />
+    <wsdl:part name="rank" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CommentOrderHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="FindWxMediaIdHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="pageIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindWxMediaIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWxMenuHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="menuJson" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWxMenuHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="userNo" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderMessageHttpGetIn">
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberDatumHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="birthDay" type="s:string" />
+    <wsdl:part name="sex" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="remark" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberDatumHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="BuildLuckyHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="drawNo" type="s:string" />
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="joinType" type="s:string" />
+    <wsdl:part name="drawShowType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BuildLuckyHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="UrgeOrderHttpGetIn">
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UrgeOrderHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="QuickSeckillHttpGetIn">
+    <wsdl:part name="drawNo" type="s:string" />
+    <wsdl:part name="periodNo" type="s:string" />
+    <wsdl:part name="ticketNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QuickSeckillHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="GetSeckillStatusHttpGetIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="drawNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSeckillStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="BuyPreorderTicketHttpGetIn">
+    <wsdl:part name="drawNo" type="s:string" />
+    <wsdl:part name="shopId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BuyPreorderTicketHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="SendRegisterSMSHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendRegisterSMSHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="SendChangePwdSMSHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendChangePwdSMSHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="RegisterCheckHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="ipCode" type="s:string" />
+    <wsdl:part name="passWord" type="s:string" />
+    <wsdl:part name="memberName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="vfCode" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPayPasswordHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="vfCode" type="s:string" />
+    <wsdl:part name="payPwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPayPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="CheckResultHttpPostIn">
+    <wsdl:part name="shopId" type="s:string" />
+    <wsdl:part name="billStr" type="s:string" />
+    <wsdl:part name="cashSum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckResultHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderHttpPostIn">
+    <wsdl:part name="billStr" type="s:string" />
+    <wsdl:part name="visitStr" type="s:string" />
+    <wsdl:part name="payName" type="s:string" />
+    <wsdl:part name="remark" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="MatchDiscountPackageHttpPostIn">
+    <wsdl:part name="billStr" type="s:string" />
+    <wsdl:part name="visitStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MatchDiscountPackageHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ExitUserHttpPostIn" />
+  <wsdl:message name="ExitUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopPageHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="pageIndex" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopPageHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMdShop" />
+  </wsdl:message>
+  <wsdl:message name="FindListShopPageHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="pageIndex" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+    <wsdl:part name="shopName" type="s:string" />
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindListShopPageHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMdShop" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="shopIds" type="s1:StringArray" />
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetListShopHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMdShop" />
+  </wsdl:message>
+  <wsdl:message name="CheckDeliverPolygonHttpPostIn">
+    <wsdl:part name="shopId" type="s:string" />
+    <wsdl:part name="memberId" type="s:string" />
+    <wsdl:part name="adrIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckDeliverPolygonHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="CommentOrderHttpPostIn">
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="orderNo" type="s:string" />
+    <wsdl:part name="foodStar" type="s:string" />
+    <wsdl:part name="sentStar" type="s:string" />
+    <wsdl:part name="serviceStar" type="s:string" />
+    <wsdl:part name="rank" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CommentOrderHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="FindWxMediaIdHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="pageIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindWxMediaIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWxMenuHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="menuJson" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWxMenuHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="userNo" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderMessageHttpPostIn">
+    <wsdl:part name="eatMode" type="s:string" />
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberDatumHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="birthDay" type="s:string" />
+    <wsdl:part name="sex" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="remark" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberDatumHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="BuildLuckyHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="drawNo" type="s:string" />
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="joinType" type="s:string" />
+    <wsdl:part name="drawShowType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BuildLuckyHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="UrgeOrderHttpPostIn">
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UrgeOrderHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="QuickSeckillHttpPostIn">
+    <wsdl:part name="drawNo" type="s:string" />
+    <wsdl:part name="periodNo" type="s:string" />
+    <wsdl:part name="ticketNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QuickSeckillHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="GetSeckillStatusHttpPostIn">
+    <wsdl:part name="groupId" type="s:string" />
+    <wsdl:part name="drawNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSeckillStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="BuyPreorderTicketHttpPostIn">
+    <wsdl:part name="drawNo" type="s:string" />
+    <wsdl:part name="shopId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BuyPreorderTicketHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:portType name="WxServiceSoap">
+    <wsdl:operation name="SendRegisterSMS">
+      <wsdl:input message="tns:SendRegisterSMSSoapIn" />
+      <wsdl:output message="tns:SendRegisterSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendChangePwdSMS">
+      <wsdl:input message="tns:SendChangePwdSMSSoapIn" />
+      <wsdl:output message="tns:SendChangePwdSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <wsdl:input message="tns:RegisterCheckSoapIn" />
+      <wsdl:output message="tns:RegisterCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <wsdl:input message="tns:ModifyPasswordSoapIn" />
+      <wsdl:output message="tns:ModifyPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPayPassword">
+      <wsdl:input message="tns:ModifyPayPasswordSoapIn" />
+      <wsdl:output message="tns:ModifyPayPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckResult">
+      <wsdl:input message="tns:CheckResultSoapIn" />
+      <wsdl:output message="tns:CheckResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input message="tns:CreateOrderSoapIn" />
+      <wsdl:output message="tns:CreateOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatchDiscountPackage">
+      <wsdl:input message="tns:MatchDiscountPackageSoapIn" />
+      <wsdl:output message="tns:MatchDiscountPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExitUser">
+      <wsdl:input message="tns:ExitUserSoapIn" />
+      <wsdl:output message="tns:ExitUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListShopPage">
+      <wsdl:input message="tns:GetListShopPageSoapIn" />
+      <wsdl:output message="tns:GetListShopPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindListShopPage">
+      <wsdl:input message="tns:FindListShopPageSoapIn" />
+      <wsdl:output message="tns:FindListShopPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListShop">
+      <wsdl:input message="tns:GetListShopSoapIn" />
+      <wsdl:output message="tns:GetListShopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliverPolygon">
+      <wsdl:input message="tns:CheckDeliverPolygonSoapIn" />
+      <wsdl:output message="tns:CheckDeliverPolygonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommentOrder">
+      <wsdl:input message="tns:CommentOrderSoapIn" />
+      <wsdl:output message="tns:CommentOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindWxMediaId">
+      <wsdl:input message="tns:FindWxMediaIdSoapIn" />
+      <wsdl:output message="tns:FindWxMediaIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWxMenu">
+      <wsdl:input message="tns:ReleaseWxMenuSoapIn" />
+      <wsdl:output message="tns:ReleaseWxMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginSoapIn" />
+      <wsdl:output message="tns:UserLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderMessage">
+      <wsdl:input message="tns:GetOrderMessageSoapIn" />
+      <wsdl:output message="tns:GetOrderMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberDatum">
+      <wsdl:input message="tns:UpdateMemberDatumSoapIn" />
+      <wsdl:output message="tns:UpdateMemberDatumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuildLucky">
+      <wsdl:input message="tns:BuildLuckySoapIn" />
+      <wsdl:output message="tns:BuildLuckySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UrgeOrder">
+      <wsdl:input message="tns:UrgeOrderSoapIn" />
+      <wsdl:output message="tns:UrgeOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickSeckill">
+      <wsdl:input message="tns:QuickSeckillSoapIn" />
+      <wsdl:output message="tns:QuickSeckillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeckillStatus">
+      <wsdl:input message="tns:GetSeckillStatusSoapIn" />
+      <wsdl:output message="tns:GetSeckillStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyPreorderTicket">
+      <wsdl:input message="tns:BuyPreorderTicketSoapIn" />
+      <wsdl:output message="tns:BuyPreorderTicketSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WxServiceHttpGet">
+    <wsdl:operation name="SendRegisterSMS">
+      <wsdl:input message="tns:SendRegisterSMSHttpGetIn" />
+      <wsdl:output message="tns:SendRegisterSMSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendChangePwdSMS">
+      <wsdl:input message="tns:SendChangePwdSMSHttpGetIn" />
+      <wsdl:output message="tns:SendChangePwdSMSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <wsdl:input message="tns:RegisterCheckHttpGetIn" />
+      <wsdl:output message="tns:RegisterCheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <wsdl:input message="tns:ModifyPasswordHttpGetIn" />
+      <wsdl:output message="tns:ModifyPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPayPassword">
+      <wsdl:input message="tns:ModifyPayPasswordHttpGetIn" />
+      <wsdl:output message="tns:ModifyPayPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpGetIn" />
+      <wsdl:output message="tns:LoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckResult">
+      <wsdl:input message="tns:CheckResultHttpGetIn" />
+      <wsdl:output message="tns:CheckResultHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input message="tns:CreateOrderHttpGetIn" />
+      <wsdl:output message="tns:CreateOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatchDiscountPackage">
+      <wsdl:input message="tns:MatchDiscountPackageHttpGetIn" />
+      <wsdl:output message="tns:MatchDiscountPackageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExitUser">
+      <wsdl:input message="tns:ExitUserHttpGetIn" />
+      <wsdl:output message="tns:ExitUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListShopPage">
+      <wsdl:input message="tns:GetListShopPageHttpGetIn" />
+      <wsdl:output message="tns:GetListShopPageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindListShopPage">
+      <wsdl:input message="tns:FindListShopPageHttpGetIn" />
+      <wsdl:output message="tns:FindListShopPageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListShop">
+      <wsdl:input message="tns:GetListShopHttpGetIn" />
+      <wsdl:output message="tns:GetListShopHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliverPolygon">
+      <wsdl:input message="tns:CheckDeliverPolygonHttpGetIn" />
+      <wsdl:output message="tns:CheckDeliverPolygonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommentOrder">
+      <wsdl:input message="tns:CommentOrderHttpGetIn" />
+      <wsdl:output message="tns:CommentOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindWxMediaId">
+      <wsdl:input message="tns:FindWxMediaIdHttpGetIn" />
+      <wsdl:output message="tns:FindWxMediaIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWxMenu">
+      <wsdl:input message="tns:ReleaseWxMenuHttpGetIn" />
+      <wsdl:output message="tns:ReleaseWxMenuHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginHttpGetIn" />
+      <wsdl:output message="tns:UserLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderMessage">
+      <wsdl:input message="tns:GetOrderMessageHttpGetIn" />
+      <wsdl:output message="tns:GetOrderMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberDatum">
+      <wsdl:input message="tns:UpdateMemberDatumHttpGetIn" />
+      <wsdl:output message="tns:UpdateMemberDatumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuildLucky">
+      <wsdl:input message="tns:BuildLuckyHttpGetIn" />
+      <wsdl:output message="tns:BuildLuckyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UrgeOrder">
+      <wsdl:input message="tns:UrgeOrderHttpGetIn" />
+      <wsdl:output message="tns:UrgeOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickSeckill">
+      <wsdl:input message="tns:QuickSeckillHttpGetIn" />
+      <wsdl:output message="tns:QuickSeckillHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeckillStatus">
+      <wsdl:input message="tns:GetSeckillStatusHttpGetIn" />
+      <wsdl:output message="tns:GetSeckillStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyPreorderTicket">
+      <wsdl:input message="tns:BuyPreorderTicketHttpGetIn" />
+      <wsdl:output message="tns:BuyPreorderTicketHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WxServiceHttpPost">
+    <wsdl:operation name="SendRegisterSMS">
+      <wsdl:input message="tns:SendRegisterSMSHttpPostIn" />
+      <wsdl:output message="tns:SendRegisterSMSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendChangePwdSMS">
+      <wsdl:input message="tns:SendChangePwdSMSHttpPostIn" />
+      <wsdl:output message="tns:SendChangePwdSMSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <wsdl:input message="tns:RegisterCheckHttpPostIn" />
+      <wsdl:output message="tns:RegisterCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <wsdl:input message="tns:ModifyPasswordHttpPostIn" />
+      <wsdl:output message="tns:ModifyPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPayPassword">
+      <wsdl:input message="tns:ModifyPayPasswordHttpPostIn" />
+      <wsdl:output message="tns:ModifyPayPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpPostIn" />
+      <wsdl:output message="tns:LoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckResult">
+      <wsdl:input message="tns:CheckResultHttpPostIn" />
+      <wsdl:output message="tns:CheckResultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input message="tns:CreateOrderHttpPostIn" />
+      <wsdl:output message="tns:CreateOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatchDiscountPackage">
+      <wsdl:input message="tns:MatchDiscountPackageHttpPostIn" />
+      <wsdl:output message="tns:MatchDiscountPackageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExitUser">
+      <wsdl:input message="tns:ExitUserHttpPostIn" />
+      <wsdl:output message="tns:ExitUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListShopPage">
+      <wsdl:input message="tns:GetListShopPageHttpPostIn" />
+      <wsdl:output message="tns:GetListShopPageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindListShopPage">
+      <wsdl:input message="tns:FindListShopPageHttpPostIn" />
+      <wsdl:output message="tns:FindListShopPageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListShop">
+      <wsdl:input message="tns:GetListShopHttpPostIn" />
+      <wsdl:output message="tns:GetListShopHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliverPolygon">
+      <wsdl:input message="tns:CheckDeliverPolygonHttpPostIn" />
+      <wsdl:output message="tns:CheckDeliverPolygonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommentOrder">
+      <wsdl:input message="tns:CommentOrderHttpPostIn" />
+      <wsdl:output message="tns:CommentOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindWxMediaId">
+      <wsdl:input message="tns:FindWxMediaIdHttpPostIn" />
+      <wsdl:output message="tns:FindWxMediaIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWxMenu">
+      <wsdl:input message="tns:ReleaseWxMenuHttpPostIn" />
+      <wsdl:output message="tns:ReleaseWxMenuHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginHttpPostIn" />
+      <wsdl:output message="tns:UserLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderMessage">
+      <wsdl:input message="tns:GetOrderMessageHttpPostIn" />
+      <wsdl:output message="tns:GetOrderMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberDatum">
+      <wsdl:input message="tns:UpdateMemberDatumHttpPostIn" />
+      <wsdl:output message="tns:UpdateMemberDatumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuildLucky">
+      <wsdl:input message="tns:BuildLuckyHttpPostIn" />
+      <wsdl:output message="tns:BuildLuckyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UrgeOrder">
+      <wsdl:input message="tns:UrgeOrderHttpPostIn" />
+      <wsdl:output message="tns:UrgeOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickSeckill">
+      <wsdl:input message="tns:QuickSeckillHttpPostIn" />
+      <wsdl:output message="tns:QuickSeckillHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeckillStatus">
+      <wsdl:input message="tns:GetSeckillStatusHttpPostIn" />
+      <wsdl:output message="tns:GetSeckillStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyPreorderTicket">
+      <wsdl:input message="tns:BuyPreorderTicketHttpPostIn" />
+      <wsdl:output message="tns:BuyPreorderTicketHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WxServiceSoap" type="tns:WxServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendRegisterSMS">
+      <soap:operation soapAction="http://tempuri.org/SendRegisterSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendChangePwdSMS">
+      <soap:operation soapAction="http://tempuri.org/SendChangePwdSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <soap:operation soapAction="http://tempuri.org/RegisterCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <soap:operation soapAction="http://tempuri.org/ModifyPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPayPassword">
+      <soap:operation soapAction="http://tempuri.org/ModifyPayPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckResult">
+      <soap:operation soapAction="http://tempuri.org/CheckResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="http://tempuri.org/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchDiscountPackage">
+      <soap:operation soapAction="http://tempuri.org/MatchDiscountPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExitUser">
+      <soap:operation soapAction="http://tempuri.org/ExitUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListShopPage">
+      <soap:operation soapAction="http://tempuri.org/GetListShopPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindListShopPage">
+      <soap:operation soapAction="http://tempuri.org/FindListShopPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListShop">
+      <soap:operation soapAction="http://tempuri.org/GetListShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliverPolygon">
+      <soap:operation soapAction="http://tempuri.org/CheckDeliverPolygon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommentOrder">
+      <soap:operation soapAction="http://tempuri.org/CommentOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWxMediaId">
+      <soap:operation soapAction="http://tempuri.org/FindWxMediaId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWxMenu">
+      <soap:operation soapAction="http://tempuri.org/ReleaseWxMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/UserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderMessage">
+      <soap:operation soapAction="http://tempuri.org/GetOrderMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberDatum">
+      <soap:operation soapAction="http://tempuri.org/UpdateMemberDatum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuildLucky">
+      <soap:operation soapAction="http://tempuri.org/BuildLucky" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrgeOrder">
+      <soap:operation soapAction="http://tempuri.org/UrgeOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickSeckill">
+      <soap:operation soapAction="http://tempuri.org/QuickSeckill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeckillStatus">
+      <soap:operation soapAction="http://tempuri.org/GetSeckillStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyPreorderTicket">
+      <soap:operation soapAction="http://tempuri.org/BuyPreorderTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WxServiceSoap12" type="tns:WxServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendRegisterSMS">
+      <soap12:operation soapAction="http://tempuri.org/SendRegisterSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendChangePwdSMS">
+      <soap12:operation soapAction="http://tempuri.org/SendChangePwdSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <soap12:operation soapAction="http://tempuri.org/RegisterCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <soap12:operation soapAction="http://tempuri.org/ModifyPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPayPassword">
+      <soap12:operation soapAction="http://tempuri.org/ModifyPayPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckResult">
+      <soap12:operation soapAction="http://tempuri.org/CheckResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <soap12:operation soapAction="http://tempuri.org/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchDiscountPackage">
+      <soap12:operation soapAction="http://tempuri.org/MatchDiscountPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExitUser">
+      <soap12:operation soapAction="http://tempuri.org/ExitUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListShopPage">
+      <soap12:operation soapAction="http://tempuri.org/GetListShopPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindListShopPage">
+      <soap12:operation soapAction="http://tempuri.org/FindListShopPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListShop">
+      <soap12:operation soapAction="http://tempuri.org/GetListShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliverPolygon">
+      <soap12:operation soapAction="http://tempuri.org/CheckDeliverPolygon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommentOrder">
+      <soap12:operation soapAction="http://tempuri.org/CommentOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWxMediaId">
+      <soap12:operation soapAction="http://tempuri.org/FindWxMediaId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWxMenu">
+      <soap12:operation soapAction="http://tempuri.org/ReleaseWxMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap12:operation soapAction="http://tempuri.org/UserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberDatum">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMemberDatum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuildLucky">
+      <soap12:operation soapAction="http://tempuri.org/BuildLucky" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrgeOrder">
+      <soap12:operation soapAction="http://tempuri.org/UrgeOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickSeckill">
+      <soap12:operation soapAction="http://tempuri.org/QuickSeckill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeckillStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetSeckillStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyPreorderTicket">
+      <soap12:operation soapAction="http://tempuri.org/BuyPreorderTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WxServiceHttpGet" type="tns:WxServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendRegisterSMS">
+      <http:operation location="/SendRegisterSMS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendChangePwdSMS">
+      <http:operation location="/SendChangePwdSMS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <http:operation location="/RegisterCheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <http:operation location="/ModifyPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPayPassword">
+      <http:operation location="/ModifyPayPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckResult">
+      <http:operation location="/CheckResult" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <http:operation location="/CreateOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchDiscountPackage">
+      <http:operation location="/MatchDiscountPackage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExitUser">
+      <http:operation location="/ExitUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListShopPage">
+      <http:operation location="/GetListShopPage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindListShopPage">
+      <http:operation location="/FindListShopPage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListShop">
+      <http:operation location="/GetListShop" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliverPolygon">
+      <http:operation location="/CheckDeliverPolygon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommentOrder">
+      <http:operation location="/CommentOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWxMediaId">
+      <http:operation location="/FindWxMediaId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWxMenu">
+      <http:operation location="/ReleaseWxMenu" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <http:operation location="/UserLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderMessage">
+      <http:operation location="/GetOrderMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberDatum">
+      <http:operation location="/UpdateMemberDatum" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuildLucky">
+      <http:operation location="/BuildLucky" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrgeOrder">
+      <http:operation location="/UrgeOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickSeckill">
+      <http:operation location="/QuickSeckill" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeckillStatus">
+      <http:operation location="/GetSeckillStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyPreorderTicket">
+      <http:operation location="/BuyPreorderTicket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WxServiceHttpPost" type="tns:WxServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SendRegisterSMS">
+      <http:operation location="/SendRegisterSMS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendChangePwdSMS">
+      <http:operation location="/SendChangePwdSMS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <http:operation location="/RegisterCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <http:operation location="/ModifyPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPayPassword">
+      <http:operation location="/ModifyPayPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckResult">
+      <http:operation location="/CheckResult" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <http:operation location="/CreateOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchDiscountPackage">
+      <http:operation location="/MatchDiscountPackage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExitUser">
+      <http:operation location="/ExitUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListShopPage">
+      <http:operation location="/GetListShopPage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindListShopPage">
+      <http:operation location="/FindListShopPage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListShop">
+      <http:operation location="/GetListShop" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliverPolygon">
+      <http:operation location="/CheckDeliverPolygon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommentOrder">
+      <http:operation location="/CommentOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWxMediaId">
+      <http:operation location="/FindWxMediaId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWxMenu">
+      <http:operation location="/ReleaseWxMenu" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <http:operation location="/UserLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderMessage">
+      <http:operation location="/GetOrderMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberDatum">
+      <http:operation location="/UpdateMemberDatum" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuildLucky">
+      <http:operation location="/BuildLucky" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrgeOrder">
+      <http:operation location="/UrgeOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickSeckill">
+      <http:operation location="/QuickSeckill" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeckillStatus">
+      <http:operation location="/GetSeckillStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyPreorderTicket">
+      <http:operation location="/BuyPreorderTicket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WxService">
+    <wsdl:port name="WxServiceSoap" binding="tns:WxServiceSoap">
+      <soap:address location="http://member.gzzbpizza.com/WxFood/WxService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WxServiceSoap12" binding="tns:WxServiceSoap12">
+      <soap12:address location="http://member.gzzbpizza.com/WxFood/WxService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WxServiceHttpGet" binding="tns:WxServiceHttpGet">
+      <http:address location="http://member.gzzbpizza.com/WxFood/WxService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WxServiceHttpPost" binding="tns:WxServiceHttpPost">
+      <http:address location="http://member.gzzbpizza.com/WxFood/WxService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
